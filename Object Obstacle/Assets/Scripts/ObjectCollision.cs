@@ -8,6 +8,12 @@ public class ObjectCollision : MonoBehaviour
     {
         // Debug.Log("Mama, just hit a wall!!!");
         // Change appearance when a collision action is triggered
-        GetComponent<MeshRenderer>().material.color = Color.yellow;
+        if (other.gameObject.tag == "Player")
+        {
+            GetComponent<MeshRenderer>().material.color = Color.yellow;
+            gameObject.tag = "Strike";
+
+        }
     }
+
 }
